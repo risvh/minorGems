@@ -164,6 +164,9 @@ void pointerUp( float inX, float inY );
 // for now, can only differentiate right clicks from other clicks
 char isLastMouseButtonRight();
 
+// FOVMOD NOTE:  Change 2/2 - Take these lines during the merge process
+int getLastMouseButton();
+
 // hetuw mod - inspired by https://github.com/Awbz/minorGems/commit/94911116df3ed21e525d9f4c67d4fffbee70f3ff
 HetuwMouseActionBuffer* hetuwGetMouseActionBuffer();
 

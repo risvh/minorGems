@@ -447,7 +447,34 @@ void callbackPassiveMotion( int inX, int inY ) {
 	
 	
 	
+
 void callbackMouse( int inButton, int inState, int inX, int inY ) {
+
+    // FOVMOD NOTE:  Change 3/3 - Take these lines during the merge process
+    currentScreenGL->mLastMouseButtonRight = false;
+
+    switch( inButton ) {
+        case SDL_BUTTON_LEFT:
+            currentScreenGL->mLastMouseButton = MouseButton::LEFT;
+            break;
+        case SDL_BUTTON_MIDDLE:
+            currentScreenGL->mLastMouseButton = MouseButton::MIDDLE;
+            break;
+        case SDL_BUTTON_RIGHT:
+            currentScreenGL->mLastMouseButtonRight = true;
+            currentScreenGL->mLastMouseButton = MouseButton::RIGHT;
+            break;
+        case SDL_BUTTON_WHEELUP:
+            currentScreenGL->mLastMouseButton = MouseButton::WHEELUP;
+            break;
+        case SDL_BUTTON_WHEELDOWN:
+            currentScreenGL->mLastMouseButton = MouseButton::WHEELDOWN;
+            break;
+        default:
+            currentScreenGL->mLastMouseButton = MouseButton::NONE;
+            break;
+        }
+    
 	// fire to all handlers
 	for( int h=0; h<currentScreenGL->mMouseHandlerVector->size(); h++ ) {
 		MouseHandlerGL *handler 

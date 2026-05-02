@@ -691,6 +691,11 @@ class ScreenGL {
         char isLastMouseButtonRight() {
             return mLastMouseButtonRight;
             }
+        
+        // FOVMOD NOTE:  Change 2/3 - Take these lines during the merge process
+        int getLastMouseButton() {
+            return mLastMouseButton;
+        }
 
 		HetuwMouseActionBuffer* hetuwGetMouseActionBuffer() {
 			return &mHetuwMouseBuffer;
@@ -870,6 +875,9 @@ class ScreenGL {
 
 
         char mLastMouseButtonRight;
+
+        // FOVMOD NOTE:  Change 3/3 - Take these lines during the merge process
+        int mLastMouseButton;
         
 		HetuwMouseActionBuffer mHetuwMouseBuffer;
 

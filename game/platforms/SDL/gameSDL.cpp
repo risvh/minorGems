@@ -4222,6 +4222,12 @@ char isLastMouseButtonRight() {
     }
 
 
+// FOVMOD NOTE:  Change 1/1 - Take these lines during the merge process
+int getLastMouseButton() {
+    return screen->getLastMouseButton();
+}
+
+
 HetuwMouseActionBuffer* hetuwGetMouseActionBuffer() {
     return screen->hetuwGetMouseActionBuffer();
 }
